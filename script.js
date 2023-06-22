@@ -3,4 +3,4 @@ function setup() {
   background(128);
 }
 
-function draw() { }
+function draw() {}

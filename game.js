@@ -39,7 +39,7 @@ console.log(mapWidth, mapHeight);
 let tileSize = 32; // 32px x 32px
 function preload() {
   tileSet = loadImage("images/pacmanTileset.png");
-  pill = loadImage("images/pac man pills/spr_pill_0.png")
+  pill = loadImage("images/pac man pills/spr_pill_0.png");
   pac_man = loadImage("images/pac_man/pac_man_0.png");
   blinky = loadImage("images/ghost/red ghost/spr_ghost_red_0.png");
   pinky = loadImage("images/ghost/pink ghost/spr_ghost_pink_0.png");
@@ -91,7 +91,7 @@ function draw() {
           8,
           8
         );
-        console.log("hit")
+        console.log("hit");
       }
     }
   }

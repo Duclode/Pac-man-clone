@@ -31,16 +31,14 @@ let tileMap = [
   [11, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 12]
 ];
 
-let cellImgs = ["white", "red"];
 cellSize = 0;
 let mapWidth = tileMap[0].length;
 let mapHeight = tileMap.length;
-console.log(mapWidth, mapHeight);
 let tileSize = 32; // 32px x 32px
 function preload() {
   tileSet = loadImage("images/pacmanTileset.png");
   pill = loadImage("images/pac man pills/spr_pill_0.png");
-  pac_man = loadImage("images/pac_man/pac_man_0.png");
+  pac_man = loadImage("images/pac_man/pac man movement.png");
   blinky = loadImage("images/ghost/red ghost/spr_ghost_red_0.png");
   pinky = loadImage("images/ghost/pink ghost/spr_ghost_pink_0.png");
   inky = loadImage("images/ghost/blue ghost/spr_ghost_blue_0.png");
@@ -53,7 +51,10 @@ function setup() {
   background(150);
   ellipseMode(CORNER);
   cellSize = floor(min(width / mapWidth, height / mapHeight));
-  //console.log(cellSize);
+  console.log(
+    `width: ${mapWidth}, height: ${mapHeight} cellSize: ${cellSize}px`
+  );
+  player = new Player(width / 2, height / 2);
 }
 
 function draw() {
@@ -91,21 +92,10 @@ function draw() {
           8,
           8
         );
-        console.log("hit");
       }
     }
   }
-  image(
-    pac_man,
-    12 * cellSize, // x coordinate
-    13 * cellSize, // y coordinate
-    cellSize,
-    cellSize,
-    0,
-    0,
-    tileSize,
-    tileSize
-  );
+
   image(
     inky,
     11 * cellSize, // x coordinate
@@ -150,5 +140,6 @@ function draw() {
     tileSize,
     tileSize
   );
+  player.draw();
+  player.move();
 }
-console.log(mapWidth);

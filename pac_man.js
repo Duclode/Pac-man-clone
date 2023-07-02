@@ -40,6 +40,8 @@ class Player {
     }
   }
   draw() {
+    fill("green");
+    circle(this.x, this.y, cellSize);
     image(
       pac_man,
       this.x,
